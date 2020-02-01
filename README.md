@@ -1,27 +1,66 @@
-# SortingAlgoVisualizer
+# Sorting Algo Visualizr
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
+[![N|Solid](https://stevity.com/img/logo/logo.png)](https://stevity.com)
 
-## Development server
+Sorting Algo Visualizr is an Angular visualizing tool which shows how different sorting algorithms in motion.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  - Select Array Range
+  - Set Delay on iteration
+  - Magic
 
-## Code scaffolding
+# Demo!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You can check it out in action here [algosort.stevity.com]. You can also halla at me here [stevity.com]
 
-## Build
+### Tech
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Sorting Algo Visualizr uses a number of open source projects to work properly:
 
-## Running unit tests
+* [Angular] - HTML enhanced for web apps!
+* [Twitter Bootstrap] - great UI boilerplate for modern web apps.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+And of course Sorting Algo Visualizr itself is open source with a [public repository][dill]
+ on GitHub.
 
-## Running end-to-end tests
+### Installation
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+To install Sorting Algo Visualizr, just clone the repo and run npm install.
 
-## Further help
+Install the dependencies and devDependencies and start the server.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```sh
+$ cd cloned-dir
+$ npm install 
+$ ng serve
+```
+
+### Plugins
+
+Sorting Algo Visualizr is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
+
+| Plugin | README |
+| ------ | ------ |
+| Ngrx Store | [https://ngrx.io/guide/store] |
+| Ngrx Effects | [https://ngrx.io/guide/effects] |
+| Ngrx store dev-tools | [https://ngrx.io/guide/store-devtools] |
+
+
+### Development
+
+Want to contribute? Great!
+
+### Todos
+
+ - Write MORE Tests
+ - Add Night Mode
+
+License
+----
+
+MIT
+**Free**
+
+   [algosort.stevity.com]: <https://algosort.stevity.com>
+   [stevity.com]: <https://www.stevity.com>
+   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
+   [Angular]: <http://angular.io>
