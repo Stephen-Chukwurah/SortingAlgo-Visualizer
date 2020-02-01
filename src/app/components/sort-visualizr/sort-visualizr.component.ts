@@ -26,7 +26,6 @@ export class SortVisualizrComponent implements OnInit {
 
   sort() {
     this.sortService.selectionSort(this.barContainer);
-    this.facade.triggerNotSorting();
   }
 
 }

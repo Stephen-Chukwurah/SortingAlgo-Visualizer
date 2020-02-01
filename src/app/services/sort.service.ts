@@ -1,12 +1,13 @@
 import { Injectable, ElementRef } from '@angular/core';
 import { UTILS } from '../constants/utils.constants';
+import { AppFacade } from '../+state/app.facade';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SortService {
 
-  constructor() { }
+  constructor(private facade: AppFacade) { }
 
   selectionSort(barContainer: ElementRef) {
     let barList: HTMLCollection = barContainer.nativeElement.children;
@@ -30,10 +31,14 @@ export class SortService {
         }
         if (minValue < currentValue) {
           temp = currentValue;
-          barList[i].children[UTILS.child].attributes[UTILS.style].value = `${UTILS.sortingColor} height: ${this.getHeightValue(barList[minIndex].children[UTILS.child].attributes[UTILS.style].value)}%;`
+          barList[i].children[UTILS.child].attributes[UTILS.style].value = `${UTILS.defaultColor} height: ${this.getHeightValue(barList[minIndex].children[UTILS.child].attributes[UTILS.style].value)}%;`
           barList[minIndex].children[UTILS.child].attributes[UTILS.style].value = `${UTILS.defaultColor} height: ${temp}%;`
         }
-      }, 1000 * i);
+
+        if(i === barList.length - 1){
+          this.facade.triggerNotSorting();
+        }
+      }, 300 * i);
     }
   }
 

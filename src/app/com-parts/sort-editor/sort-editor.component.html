@@ -4,7 +4,6 @@
             <!-- Title -->
             <h2 class="font-bold mb-6">{{ (data$ | async)?.title }}</h2>
             <!-- Title -->
-
                 <!-- Pane details -->
                 <div>
                     <form action="#">
@@ -20,7 +19,7 @@
                         </div>
                         <div class="form-group">
                             <label class="small">Range</label>
-                            <input  #range type="range" min="3" max="100" step="1" [value]="50" class="form-control" (change)="setDataRange(range.value)"> {{ range.value }}
+                            <input  #range type="range" min="3" max="100" step="1" [value]="50" class="form-control" (change)="setDataRange(range.value)" [disabled]="(this.facade.isSorting$ | async)" > {{ range.value }}
                         </div>
                         <div class="form-group mb-0">
                             <label class="small">Description</label>
@@ -35,7 +34,7 @@
     <!-- Button -->
     <div class="pb-6">
         <div class="container-fluid">
-            <button class="btn btn-primary btn-block" type="button" (click)="sortData()">Visualize -></button>
+            <button class="btn btn-primary btn-block" type="button" [disabled]="(this.facade.isSorting$ | async)" (click)="sortData()"><i *ngIf="(this.facade.isSorting$ | async)" class="fa fa-spinner fa-spin"></i>&nbsp;Visualize</button>
         </div>
     </div>
 </div>
