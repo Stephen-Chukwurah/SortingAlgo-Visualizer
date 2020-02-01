@@ -52,7 +52,7 @@ Want to contribute? Great!
 ### Todos
 
  - Write MORE Tests
- - Add Night Mode
+ - Add More Algorithms
 
 License
 ----
