@@ -1,0 +1,5 @@
+<div class="bar-container" #barContainer>
+    <div class="progress progress-bar-vertical" [style.width]="'10%'" *ngFor="let bar of (bars$ | async)">
+        <div class="progress-bar" [style.background]="bar.color" [style.height]="bar.percentage"></div>
+    </div>
+</div>
