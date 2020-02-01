@@ -1,4 +1,4 @@
-<div class="main main-visible">
+<div class="main main-visible" [class.main-visible]="this.facade.isSorting$ | async">
     <!-- Grid -->
     <div class="grid">
         <!-- Grid: body -->
@@ -9,13 +9,13 @@
                     <div class="row align-items-center">
                         <!-- Close Grid(mobile) -->
                         <div class="col-3 d-lg-none">
-                            <ul class="list-inline mb-0">
+                            <!-- <ul class="list-inline mb-0">
                                 <li class="list-inline-item">
-                                    <a class="text-muted px-0" href="#" data-chat="open">
+                                    <a class="text-muted px-0">
                                         <i class="icon-md fe-chevron-left"></i>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </div>
                         <!-- Grid logo -->
                         <div class="col-6 col-lg-6">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppFacade } from '../../+state/app.facade';
 
 @Component({
   selector: 'app-sort-grid',
@@ -6,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sort-grid.component.scss']
 })
 export class SortGridComponent implements OnInit {
-
-  constructor() { }
+  constructor(private facade: AppFacade) { }
 
   ngOnInit() {
   }
