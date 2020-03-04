@@ -16,7 +16,7 @@ export class SortEditorComponent implements OnInit {
 
   ngOnInit() {
     this.data$ = this.facade.currentPane$;
-    this.facade.setDataSize(50);
+    this.facade.setDataSize(100);
   }
 
   setDataRange(range: number) {

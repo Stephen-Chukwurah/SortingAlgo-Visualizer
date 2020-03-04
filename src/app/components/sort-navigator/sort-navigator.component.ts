@@ -18,6 +18,7 @@ export class SortNavigatorComponent implements OnInit {
   goToPane(pane: Pane) {
     this.activeIndex= pane.id;
     this.facade.loadCurrentPane(pane);
+    this.facade.setDataSize(100);
   }
 
 }

@@ -27,7 +27,7 @@ export class AppEffects {
     for(let i = 0;i<max ; i++){
         let temp = Math.floor(Math.random()*max);
         if((random.findIndex(i => i.value === temp)) == -1){
-            random.push({label:"blue", color: "blue", value: temp, percentage: `${temp}%`});
+            random.push({label:"blue", color: "#0176ff", value: temp, percentage: `${temp}%`});
         }
         else
          i--;

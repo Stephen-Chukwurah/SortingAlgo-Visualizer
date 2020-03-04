@@ -1,3 +1,7 @@
-li.nav-item {
+li.nav-item a {
     cursor: pointer;
+}
+li.nav-item a.disabled {
+    color: gray;
+    cursor: progress;
 }

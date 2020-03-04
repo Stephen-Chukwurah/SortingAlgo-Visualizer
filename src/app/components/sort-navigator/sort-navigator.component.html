@@ -9,8 +9,8 @@
     <ul class="nav navbar-nav flex-row flex-lg-column flex-grow-1 justify-content-between py-2 py-lg-0">
 
         <!-- Insertion Sort -->
-        <li class="nav-item mt-lg-8" [class.active]="activeIndex === 1">
-            <a class="nav-link position-relative p-0 py-2" (click)="goToPane({id: 1, title: 'Insertion Sort', image: './assets/images/demos/insertion.png' })">
+        <li class="nav-item mt-lg-8"  [class.active]="activeIndex === 1">
+            <a [class.disabled]="facade.isSorting$ | async" class="nav-link position-relative p-0 py-2" (click)="goToPane({id: 1, title: 'Insertion Sort', image: './assets/images/demos/insertion.png' })">
                 <i class="icon-lg fa fa-anchor"></i>
                 <div *ngIf="activeIndex === 1" class="badge badge-dot badge-primary badge-bottom-center"></div>
             </a>
@@ -18,15 +18,15 @@
 
         <!-- Selection Sort -->
         <li class="nav-item mt-lg-8" [class.active]="activeIndex === 2">
-            <a class="nav-link position-relative p-0 py-2" (click)="goToPane({id: 2, title: 'Selection Sort', image: './assets/images/demos/selection.png' })">
+            <a [class.disabled]="facade.isSorting$ | async" class="nav-link position-relative p-0 py-2" (click)="goToPane({id: 2, title: 'Selection Sort', image: './assets/images/demos/selection.png' })">
                 <i class="icon-lg fa fa-edit"></i>
                 <div *ngIf="activeIndex === 2" class="badge badge-dot badge-primary badge-bottom-center"></div>
             </a>
         </li>
 
         <!-- Bubble Sort -->
-        <li class="nav-item mt-lg-8 d-none d-lg-block" [class.active]="activeIndex === 3">
-            <a class="nav-link position-relative p-0 py-2" (click)="goToPane({id: 3, title: 'Bubble Sort', image: './assets/images/demos/bubble.png' })">
+        <li class="nav-item mt-lg-8" [class.active]="activeIndex === 3">
+            <a [class.disabled]="facade.isSorting$ | async" class="nav-link position-relative p-0 py-2" (click)="goToPane({id: 3, title: 'Bubble Sort', image: './assets/images/demos/bubble.png' })">
                 <i class="icon-lg fa fa-spinner"></i>
                 <div *ngIf="activeIndex === 3" class="badge badge-dot badge-primary badge-bottom-center"></div>
             </a>
@@ -34,7 +34,7 @@
 
         <!-- Quick Sort -->
         <li class="nav-item mt-lg-8" [class.active]="activeIndex === 4">
-            <a class="nav-link position-relative p-0 py-2" (click)="goToPane({id: 4, title: 'Quick Sort', image: './assets/images/demos/quick.png' })">
+            <a [class.disabled]="facade.isSorting$ | async" class="nav-link position-relative p-0 py-2" (click)="goToPane({id: 4, title: 'Quick Sort', image: './assets/images/demos/quick.png' })">
                 <i class="icon-lg fa fa-fire"></i>
                 <div *ngIf="activeIndex === 4" class="badge badge-dot badge-primary badge-bottom-center"></div>
             </a>
@@ -42,7 +42,7 @@
 
         <!-- Merge Sort -->
         <li class="nav-item mt-lg-8" [class.active]="activeIndex === 5">
-            <a class="nav-link position-relative p-0 py-2" (click)="goToPane({id: 5, title: 'Merge Sort', image: './assets/images/demos/merge.png' })">
+            <a [class.disabled]="facade.isSorting$ | async" class="nav-link position-relative p-0 py-2" (click)="goToPane({id: 5, title: 'Merge Sort', image: './assets/images/demos/merge.png' })">
                 <i class="icon-lg fa fa-object-group"></i>
                 <div *ngIf="activeIndex === 5" class="badge badge-dot badge-primary badge-bottom-center"></div>
             </a>
@@ -50,7 +50,7 @@
 
         <!-- Heap Sort -->
         <li class="nav-item mt-lg-8" [class.active]="activeIndex === 6">
-            <a class="nav-link position-relative p-0 py-2" (click)="goToPane({id: 6, title: 'Heap Sort', image: './assets/images/demos/heap.png' })">
+            <a [class.disabled]="facade.isSorting$ | async" class="nav-link position-relative p-0 py-2" (click)="goToPane({id: 6, title: 'Heap Sort', image: './assets/images/demos/heap.png' })">
                 <i class="icon-lg fa fa-play fa-rotate-270"></i>
                 <div *ngIf="activeIndex === 6" class="badge badge-dot badge-primary badge-bottom-center"></div>
             </a>

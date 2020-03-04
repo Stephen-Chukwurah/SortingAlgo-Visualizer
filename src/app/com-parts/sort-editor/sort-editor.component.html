@@ -19,7 +19,7 @@
                         </div>
                         <div class="form-group">
                             <label class="small">Range</label>
-                            <input  #range type="range" min="3" max="100" step="1" [value]="50" class="form-control" (change)="setDataRange(range.value)" [disabled]="(this.facade.isSorting$ | async)" > {{ range.value }}
+                            <input  #range type="range" min="3" max="100" step="1" [value]="facade.dataSize$ | async" class="form-control" (change)="setDataRange(range.value)" [disabled]="(this.facade.isSorting$ | async)" > {{ range.value }}
                         </div>
                         <div class="form-group mb-0">
                             <label class="small">Description</label>
