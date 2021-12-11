@@ -10,7 +10,7 @@ Sorting Algo Visualizr is an Angular visualizing tool which shows how different 
 
 # Demo!
 
-You can check it out in action here [algosort.stevity.com]. You can also halla at me here [stevity.com]
+You can check it out in action here [https://stephen-chukwurah.github.io/SortingAlgo-Visualizer]. You can also halla at me here [https://stephen-chukwurah.github.io]
 
 ### Tech
 
