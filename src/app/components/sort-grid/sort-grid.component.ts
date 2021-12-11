@@ -7,7 +7,7 @@ import { AppFacade } from '../../+state/app.facade';
   styleUrls: ['./sort-grid.component.scss']
 })
 export class SortGridComponent implements OnInit {
-  constructor(private facade: AppFacade) { }
+  constructor(public facade: AppFacade) { }
 
   ngOnInit() {
   }

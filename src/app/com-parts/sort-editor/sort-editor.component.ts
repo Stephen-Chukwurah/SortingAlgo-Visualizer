@@ -12,7 +12,7 @@ export class SortEditorComponent implements OnInit {
 
   data$: Observable<Pane>;
 
-  constructor(private facade: AppFacade) { }
+  constructor(public facade: AppFacade) { }
 
   ngOnInit() {
     this.data$ = this.facade.currentPane$;

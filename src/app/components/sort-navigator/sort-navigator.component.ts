@@ -8,7 +8,7 @@ import { AppFacade } from 'src/app/+state/app.facade';
 })
 export class SortNavigatorComponent implements OnInit {
   
-  constructor(private facade: AppFacade) { }
+  constructor(public facade: AppFacade) { }
   activeIndex: number;
 
   ngOnInit() {
