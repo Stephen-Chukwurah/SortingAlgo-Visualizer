@@ -2,17 +2,22 @@ import { Injectable, ElementRef } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { UTILS, STR } from '../constants/utils.constants';
 import { AppFacade } from '../+state/app.facade';
-import { take } from 'rxjs/operators';
+import { take, takeUntil } from 'rxjs/operators';
+import { Subject, Subscription, timer } from 'rxjs';  
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SortService {
+  timer$;
+  timerResetSubject$ = new Subject();
   private globalCount: number = 0;
 
-  constructor(private facade: AppFacade, private toastr: ToastrService) { }
+  constructor(private facade: AppFacade, private toastr: ToastrService) {}
 
   doSort(barContainer: ElementRef) {
+    this.setTimer()
     this.facade.currentPane$.pipe(take(1)).subscribe((pane: Pane) => {
       switch (pane.id) {
         case 1: {
@@ -178,8 +183,17 @@ export class SortService {
     return result;
   }
 
+  setTimer() {
+    this.timer$ = timer(500, 500).pipe(takeUntil(this.timerResetSubject$));    
+  }
+
+  resetTimer() {
+    this.timerResetSubject$.next();  
+  }
+
   // Shows a done toastr message after any sort
   private done() {
+    this.resetTimer();
     this.facade.triggerNotSorting();
     this.toastr.success('Done !');
   }
