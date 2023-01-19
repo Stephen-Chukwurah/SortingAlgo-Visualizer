@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { AppFacade } from 'src/app/+state/app.facade';
-import { take } from 'rxjs/operators';
+import { Algorithms } from 'src/app/constants/sort-algorithm.constant';
 
 @Component({
   selector: 'app-sort-editor',
@@ -9,14 +8,12 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./sort-editor.component.scss']
 })
 export class SortEditorComponent implements OnInit {
-
-  data$: Observable<Pane>;
-
+  Algorithms = Algorithms;
+  algorithm = Algorithms[0];
   constructor(public facade: AppFacade) { }
 
   ngOnInit() {
-    this.data$ = this.facade.currentPane$;
-    this.facade.setDataSize(100);
+    this.presetVisualizr();
   }
 
   setDataRange(range: number) {
@@ -25,6 +22,15 @@ export class SortEditorComponent implements OnInit {
 
   sortData() {
     this.facade.triggerIsSorting();
+  }
+
+  handleAlgorithmChange() {
+    this.presetVisualizr();
+  }
+
+  presetVisualizr() {
+    this.facade.loadCurrentPane(this.algorithm);
+    this.facade.setDataSize(100);
   }
 
 }

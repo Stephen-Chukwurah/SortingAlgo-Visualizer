@@ -9,20 +9,13 @@
                     <div class="row align-items-center">
                         <!-- Close Grid(mobile) -->
                         <div class="col-3 d-lg-none">
-                            <!-- <ul class="list-inline mb-0">
-                                <li class="list-inline-item">
-                                    <a class="text-muted px-0">
-                                        <i class="icon-md fe-chevron-left"></i>
-                                    </a>
-                                </li>
-                            </ul> -->
                         </div>
                         <!-- Grid logo -->
                         <div class="col-6 col-lg-6">
                             <div class="media text-center text-lg-left">
                                 <div class="media-body align-self-center">
                                     <h6 class="mb-n2">Sorting Algo Visualizr</h6>
-                                    <small class="text-muted">make una visualize am !!!</small>
+                                    <small class="text-muted">Time: {{ (service?.timer$ | async) || 0 }} Milli Seconds </small>
                                 </div>
                             </div>
                         </div>

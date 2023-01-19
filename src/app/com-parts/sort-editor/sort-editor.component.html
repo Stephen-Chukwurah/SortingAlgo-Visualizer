@@ -1,29 +1,25 @@
-<div  class="d-flex flex-column h-100" *ngIf="(data$ | async)">
+<div  class="d-flex flex-column h-100" *ngIf="facade.currentPane$ | async as data;">
     <div class="hide-scrollbar">
         <div class="container-fluid py-6">
             <!-- Title -->
-            <h2 class="font-bold mb-6">{{ (data$ | async)?.title }}</h2>
+            <h2 class="font-bold mb-6">{{ data?.title }}</h2>
             <!-- Title -->
                 <!-- Pane details -->
                 <div>
                     <form action="#">
                         <div class="form-group">
-                            <div class="position-relative text-center bg-secondary rounded">
-                               <img src="{{ (data$ | async)?.image}}" width="100%" height="200">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
                             <label class="small">Title</label>
-                            <input type="text" class="form-control" placeholder="{{ (data$ | async)?.title }}">
+                            <select [disabled]="this.facade.isSorting$ | async" class="form-control" [(ngModel)]="algorithm" [ngModelOptions]="{standalone: true}" (change)="handleAlgorithmChange()">
+                                <option *ngFor="let item of Algorithms" [ngValue]="item">{{ item?.title }}</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label class="small">Range</label>
-                            <input  #range type="range" min="3" max="100" step="1" [value]="facade.dataSize$ | async" class="form-control" (change)="setDataRange(range.value)" [disabled]="(this.facade.isSorting$ | async)" > {{ range.value }}
+                            <input [disabled]="this.facade.isSorting$ | async" #range type="range" min="3" max="100" step="1" [value]="facade.dataSize$ | async" class="form-control" (change)="setDataRange(range.value)" > {{ range.value }}
                         </div>
                         <div class="form-group mb-0">
                             <label class="small">Description</label>
-                            <textarea class="form-control" rows="6" placeholder="Group description..."></textarea>
+                            <textarea [disabled]="this.facade.isSorting$ | async" class="form-control" rows="6" placeholder="Group description..."></textarea>
                         </div>
                     </form>
                 </div>
@@ -34,7 +30,7 @@
     <!-- Button -->
     <div class="pb-6">
         <div class="container-fluid">
-            <button class="btn btn-primary btn-block" type="button" [disabled]="(this.facade.isSorting$ | async)" (click)="sortData()"><i *ngIf="(this.facade.isSorting$ | async)" class="fa fa-spinner fa-spin"></i>&nbsp;Visualize</button>
+            <button class="btn btn-primary btn-block" type="button" [disabled]="this.facade.isSorting$ | async" (click)="sortData()"><i *ngIf="this.facade.isSorting$ | async" class="fa fa-spinner fa-spin"></i>&nbsp;Visualize</button>
         </div>
     </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SortService } from 'src/app/services/sort.service';
 import { AppFacade } from '../../+state/app.facade';
 
 @Component({
@@ -7,7 +8,7 @@ import { AppFacade } from '../../+state/app.facade';
   styleUrls: ['./sort-grid.component.scss']
 })
 export class SortGridComponent implements OnInit {
-  constructor(public facade: AppFacade) { }
+  constructor(public facade: AppFacade, public service: SortService) { }
 
   ngOnInit() {
   }
